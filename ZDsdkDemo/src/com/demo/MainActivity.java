@@ -144,7 +144,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			 break;
 		case R.id.logout:
 			// ZhiDianManager.logout(this, iLogOutListener);
-			ZDSDK.getInstance(this).logOut(gameInfo, callback);
+			ZDSDK.getInstance(this).logOut(this, gameInfo, callback);
 			break;
 		case R.id.exit:
 			// ZhiDianManager.exit(this, exitListener);
