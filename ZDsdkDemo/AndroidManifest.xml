@@ -63,10 +63,6 @@
             </activity>
 
         <meta-data
-            android:name="appId"
-            android:value="appId:130502526490" >
-        </meta-data>
-        <meta-data
             android:name="channelId"
             android:value="channelId:14112403234" >
         </meta-data>
@@ -74,14 +70,7 @@
             android:name="merchantId"
             android:value="merchantId:1411210225" >
         </meta-data>
-        <meta-data
-            android:name="appKey"
-            android:value="appKey:1411210225" >
-        </meta-data>
-        <meta-data
-            android:name="screenOrientation"
-            android:value="screenOrientation:0" >
-        </meta-data>
+      
 <!--         <meta-data
             android:name="appId"
             android:value="appId:130412569543" >
