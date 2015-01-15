@@ -1,4 +1,4 @@
-package com.zhidian.gamesdk.application;
+package com.application;
 
 import android.app.Application;
 
