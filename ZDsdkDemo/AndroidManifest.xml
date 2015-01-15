@@ -66,8 +66,6 @@
             android:name="com.zhidian.gamesdk.demo.LoginActivity"
             android:screenOrientation="landscape" >
         </activity>
-        <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
-        </activity>
 
         <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
         <activity
@@ -94,7 +92,7 @@
 
         <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
         <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
-        <meta-data
+        <meta-data>
             android:name="QHOPENSDK_APPKEY"
             android:value="40993979094cc49fbc10b6d2d107f480" >
         </meta-data>
@@ -163,34 +161,6 @@
             android:exported="false"
             android:process=":QLocal" >
         </service>
-        <!--
-             <meta-data
-            android:name="appId"
-            android:value="appId:130412569543" >
-        </meta-data>
-        <meta-data
-            android:name="channelId"
-            android:value="channelId:1123434434" >
-        </meta-data>
-        <meta-data
-            android:name="merchantId"
-            android:value="merchantId:1303153867" >
-        </meta-data>
-        -->
-        <!--
-               <meta-data
-                android:name="appId"
-                android:value="appId:130312999407" >
-            </meta-data>
-            <meta-data
-                android:name="channelId"
-                android:value="channelId:1123434434" >
-            </meta-data>
-            <meta-data
-                android:name="merchantId"
-                android:value="merchantId:1303113797" >
-            </meta-data>
-        -->
     </application>
 
     <supports-screens
