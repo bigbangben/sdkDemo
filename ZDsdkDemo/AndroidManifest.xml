@@ -27,13 +27,12 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
     <!-- 短信 -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
-     <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
-        
     </uses-permission>
 
     <application
@@ -51,16 +50,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            <activity
-                android:name="com.zhidian.gamesdk.demo.MainActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.zhidian.gamesdk.demo.LoginActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
-            </activity>
+        <activity
+            android:name="com.zhidian.gamesdk.demo.MainActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.zhidian.gamesdk.demo.LoginActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
+        </activity>
 
         <meta-data
             android:name="channelId"
@@ -70,37 +69,25 @@
             android:name="merchantId"
             android:value="merchantId:1411210225" >
         </meta-data>
-      
-<!--         <meta-data
+        <meta-data
             android:name="appId"
-            android:value="appId:130412569543" >
+            android:value="appId:130502526490" >
         </meta-data>
         <meta-data
-            android:name="channelId"
-            android:value="channelId:1123434434" >
+            android:name="appKey"
+            android:value="appKey:1411210225" >
         </meta-data>
         <meta-data
-            android:name="merchantId"
-            android:value="merchantId:1303153867" >
-        </meta-data> -->
-<!--           <meta-data
-                android:name="appId"
-                android:value="appId:130312999407" >
-            </meta-data>
-            <meta-data
-                android:name="channelId"
-                android:value="channelId:1123434434" >
-            </meta-data>
-            <meta-data
-                android:name="merchantId"
-                android:value="merchantId:1303113797" >
-            </meta-data> -->
+            android:name="screenOrientation"
+            android:value="screenOrientation:0" >
+        </meta-data>
     </application>
-<supports-screens
+
+    <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
-    
+
 </manifest>
