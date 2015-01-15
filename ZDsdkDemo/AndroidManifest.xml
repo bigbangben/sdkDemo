@@ -126,11 +126,11 @@
 
         <meta-data
             android:name="appId"
-            android:value="appId:130502526490" >
+            android:value="appId:100010" >
         </meta-data>
         <meta-data
             android:name="appKey"
-            android:value="appKey:1411210225" >
+            android:value="appKey:C28454605B9312157C2F76F27A9BCA2349434E546A6E9C75" >
         </meta-data>
         <meta-data
             android:name="screenOrientation"
