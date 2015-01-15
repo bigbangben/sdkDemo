@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhidian.gamesdk.demo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络状态的权限控制 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <!-- 读取手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+    <!-- 短信 -->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+     <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" >
+        
+    </uses-permission>
+
+    <application
+        android:name="com.zhidian.gamesdk.application.AppApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.zhidian.gamesdk.demo.WelComeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+            <activity
+                android:name="com.zhidian.gamesdk.demo.MainActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity
+                android:name="com.zhidian.gamesdk.demo.LoginActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
+            </activity>
+
+        <meta-data
+            android:name="appId"
+            android:value="appId:130502526490" >
+        </meta-data>
+        <meta-data
+            android:name="channelId"
+            android:value="channelId:14112403234" >
+        </meta-data>
+        <meta-data
+            android:name="merchantId"
+            android:value="merchantId:1411210225" >
+        </meta-data>
+<!--         <meta-data
+            android:name="appId"
+            android:value="appId:130412569543" >
+        </meta-data>
+        <meta-data
+            android:name="channelId"
+            android:value="channelId:1123434434" >
+        </meta-data>
+        <meta-data
+            android:name="merchantId"
+            android:value="merchantId:1303153867" >
+        </meta-data> -->
+<!--           <meta-data
+                android:name="appId"
+                android:value="appId:130312999407" >
+            </meta-data>
+            <meta-data
+                android:name="channelId"
+                android:value="channelId:1123434434" >
+            </meta-data>
+            <meta-data
+                android:name="merchantId"
+                android:value="merchantId:1303113797" >
+            </meta-data> -->
+    </application>
+<supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    
+</manifest>
