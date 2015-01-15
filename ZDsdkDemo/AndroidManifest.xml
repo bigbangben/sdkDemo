@@ -27,14 +27,21 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
     <!-- 短信 -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
-     <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
-        
     </uses-permission>
+
+    <!-- 添加360SDK必需要的权限。 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name="com.zhidian.gamesdk.application.AppApplication"
@@ -51,30 +58,113 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            <activity
-                android:name="com.zhidian.gamesdk.demo.MainActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.zhidian.gamesdk.demo.LoginActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
-            </activity>
+        <activity
+            android:name="com.zhidian.gamesdk.demo.MainActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.zhidian.gamesdk.demo.LoginActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity android:name="com.zhidian.gamesdk.ui.ZhidianActivity" >
+        </activity>
 
+        <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+        <activity
+            android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <!-- 添加360SDK必需的activity：com.qihoopp.qcoinpay.QcoinActivity -->
+        <activity
+            android:name="com.qihoopp.qcoinpay.QcoinActivity"
+            android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
+        </activity>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
         <meta-data
-            android:name="appId"
-            android:value="appId:130502526490" >
+            android:name="QHOPENSDK_APPID"
+            android:value="201696431" >
         </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
         <meta-data
-            android:name="channelId"
-            android:value="channelId:14112403234" >
+            android:name="QHOPENSDK_APPKEY"
+            android:value="40993979094cc49fbc10b6d2d107f480" >
         </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
         <meta-data
-            android:name="merchantId"
-            android:value="merchantId:1411210225" >
+            android:name="QHOPENSDK_PRIVATEKEY"
+            android:value="ad8543ebf2c9bf28e63a060a9462671c" >
         </meta-data>
-<!--         <meta-data
+
+        <!-- *   如下是需要加载的360推送配置项  * -->
+        <!-- 开机自启 -->
+        <receiver
+            android:name="com.qihoo.gamecenter.sdk.suspend.local.QBootReceiver"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.qihoo.gamecenter.sdk.suspend.remote.QRemoteService"
+            android:exported="true"
+            android:process=":QSuspendRemote" >
+            <intent-filter>
+                <action android:name="com.qihoo.gamecenter.sdk.suspend.service.action.remote" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService" />
+            </intent-filter>
+        </service>
+
+        <!-- 如下是360游戏实时推送SDK必要声明，不可修改 -->
+        <receiver
+            android:name="com.qihoo.psdk.local.QBootReceiver"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.qihoo.psdk.app.QStatActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <service
+            android:name="com.qihoo.psdk.remote.QRemoteService"
+            android:exported="true"
+            android:process=":QRemote" >
+            <intent-filter>
+                <action android:name="com.qihoo.psdk.service.action.remote" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.qihoo.psdk.local.QLocalService"
+            android:exported="false"
+            android:process=":QLocal" >
+        </service>
+        <!--
+             <meta-data
             android:name="appId"
             android:value="appId:130412569543" >
         </meta-data>
@@ -85,8 +175,10 @@
         <meta-data
             android:name="merchantId"
             android:value="merchantId:1303153867" >
-        </meta-data> -->
-<!--           <meta-data
+        </meta-data>
+        -->
+        <!--
+               <meta-data
                 android:name="appId"
                 android:value="appId:130312999407" >
             </meta-data>
@@ -97,13 +189,15 @@
             <meta-data
                 android:name="merchantId"
                 android:value="merchantId:1303113797" >
-            </meta-data> -->
+            </meta-data>
+        -->
     </application>
-<supports-screens
+
+    <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
-    
+
 </manifest>

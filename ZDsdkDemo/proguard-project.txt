@@ -18,3 +18,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep public class cn.pp.** {*;}
+-keep public class com.yeepay.** {*;}
+-keep public class com.alipay.** {*;}
+-keep public class com.qihoo360.** {*;}
+-keep public class com.qihoopp.** {*;}
+-keep public class com.qihoo.** {*;}
