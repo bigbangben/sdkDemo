@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
@@ -57,6 +58,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
 			Toast.makeText(MainActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
+			mPayLayout.setVisibility(View.VISIBLE);
 			MainActivity.loginTime = loginTime;
 		}
 
@@ -75,6 +77,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private String notifyUrl;
 	private String extInfo;
 	private String cpOrderId;
+	private LinearLayout mPayLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +103,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		findViewById(R.id.exit).setOnClickListener(this);
 		findViewById(R.id.doneArea).setOnClickListener(this);
 		findViewById(R.id.doneNotes).setOnClickListener(this);
+		mPayLayout = (LinearLayout)findViewById(R.id.ll_customPay);
 		mAreaEdit = (EditText) findViewById(R.id.area);
 		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
 		mNotesEdit = (EditText) findViewById(R.id.notes);
