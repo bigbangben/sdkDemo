@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zhidian.gamesdk.demo"
+    package="com.demo"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -37,12 +37,12 @@
     </uses-permission>
 
     <application
-        android:name="com.zhidian.gamesdk.application.AppApplication"
+        android:name="com.application.AppApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name="com.zhidian.gamesdk.demo.WelComeActivity"
+            android:name="com.demo.WelComeActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape" >
             <intent-filter>
@@ -52,11 +52,11 @@
             </intent-filter>
         </activity>
             <activity
-                android:name="com.zhidian.gamesdk.demo.MainActivity"
+                android:name="com.demo.MainActivity"
                 android:screenOrientation="landscape" >
             </activity>
             <activity
-                android:name="com.zhidian.gamesdk.demo.LoginActivity"
+                android:name="com.demo.LoginActivity"
                 android:screenOrientation="landscape" >
             </activity>
 

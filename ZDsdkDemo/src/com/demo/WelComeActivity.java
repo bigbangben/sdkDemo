@@ -1,8 +1,7 @@
-package com.zhidian.gamesdk.demo;
+package com.demo;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
