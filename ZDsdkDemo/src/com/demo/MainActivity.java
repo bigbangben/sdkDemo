@@ -1,4 +1,4 @@
-package com.zhidian.gamesdk.demo;
+package com.demo;
 
 import android.app.Activity;
 import android.content.Intent;
