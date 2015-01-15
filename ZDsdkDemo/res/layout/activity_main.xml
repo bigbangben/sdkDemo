@@ -28,22 +28,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
-            android:text="设置发行服务器信息" />
+            android:text="设置角色" />
 
         <Button
             android:id="@+id/startUPPay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
-            android:text="支付中心"
-            android:visibility="gone" />
+            android:text="支付中心" />
         <Button
             android:id="@+id/cancleFloat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
-            android:text="取消浮标" 
-            android:visibility="gone"/>
+            android:text="取消浮标" />
 
         <Button
             android:id="@+id/logout"
@@ -88,7 +86,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:background="@null"
-                android:textColor="#000000"
                 android:inputType="number" />
 
             <TextView
@@ -105,8 +102,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edig_bg"
             android:gravity="center"
-            android:weightSum="2" 
-            android:visibility="gone">
+            android:weightSum="2" >
 
             <EditText
                 android:id="@+id/area"
@@ -129,7 +125,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edig_bg"
             android:gravity="center"
-            android:visibility="gone"
+            android:visibility="visible"
             android:weightSum="2" >
 
             <EditText
