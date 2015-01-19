@@ -1,18 +1,19 @@
 package com.demo;
 
-import com.zhidian.issueSDK.ICallback;
-import com.zhidian.issueSDK.ZDSDK;
-import com.zhidian.issueSDK.model.GameInfo;
-import com.zhidian.issueSDK.model.UserInfoModel;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.zhidian.issueSDK.ICallback;
+import com.zhidian.issueSDK.ZDSDK;
+import com.zhidian.issueSDK.model.GameInfo;
+import com.zhidian.issueSDK.model.UserInfoModel;
 
 public class SetRoleActivity extends Activity implements OnClickListener {
 
