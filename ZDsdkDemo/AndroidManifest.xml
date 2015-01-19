@@ -58,6 +58,10 @@
             android:name="com.demo.LoginActivity"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name="com.demo.SetRoleActivity"
+            android:screenOrientation="landscape" >
+        </activity>
 
         <meta-data
             android:name="channelId"
@@ -78,6 +82,10 @@
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
+        </meta-data>
+         <meta-data
+            android:name="gameId"
+            android:value="gameId:23" >
         </meta-data>
     </application>
 

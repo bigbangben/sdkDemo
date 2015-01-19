@@ -57,8 +57,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
-			Toast.makeText(MainActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
-			mPayLayout.setVisibility(View.VISIBLE);
 			MainActivity.loginTime = loginTime;
 		}
 
@@ -69,7 +67,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void createRoleSuccess() {
-			Toast.makeText(MainActivity.this, "创建成功", Toast.LENGTH_SHORT).show();
 		}
 
 	};
@@ -84,17 +81,19 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		Bundle bundle = getIntent().getExtras();
+		String roleName = bundle.getString("RoleName");
 		gameInfo = new GameInfo();
 		gameInfo.setRoleId("111111");
 		gameInfo.setRoleLevel("11");
-		gameInfo.setRoleName("qq");
-		gameInfo.setZoneId("1111");
+		gameInfo.setRoleName(roleName);
+		gameInfo.setZoneId("1");
 		gameInfo.setZoneName("big");
+		ZDSDK.getInstance(this).setGameInfo(this, gameInfo, true, callback);
 		cpOrderId = "353535";
 		extInfo = "normal notes";
 		notifyUrl = "http://zdsdktest.zhidian3g.cn:888/platform/callback";
 		findViewById(R.id.createRole).setOnClickListener(this);
-		findViewById(R.id.setGameInfo).setOnClickListener(this);
 		findViewById(R.id.startUPPay).setOnClickListener(this);
 		findViewById(R.id.doneCusompay).setOnClickListener(this);
 		findViewById(R.id.cancleFloat).setOnClickListener(this);
@@ -118,11 +117,6 @@ public class MainActivity extends Activity implements OnClickListener {
 			// ZhiDianManager.payNormal(this,"normal notes");
 			// new SMSPay().pay(this, "xxx", "2", "aaa");
 			ZDSDK.getInstance(this).createRole(gameInfo, callback);
-			break;
-		case R.id.setGameInfo:
-			// ZhiDianManager.payNormal(this,"normal notes");
-			// new SMSPay().pay(this, "xxx", "2", "aaa");
-			ZDSDK.getInstance(this).setGameInfo(this, gameInfo, true, callback);
 			break;
 		case R.id.startUPPay:
 			// ZhiDianManager.payNormal(this,"normal notes");

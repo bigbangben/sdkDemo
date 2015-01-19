@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
+import com.zhidian.issueSDK.model.GameInfo;
 import com.zhidian.issueSDK.model.InitInfo;
 import com.zhidian.issueSDK.model.UserInfoModel;
 import com.zhidian.issueSDK.util.SDKLog;
@@ -48,7 +49,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			Toast.makeText(WelComeActivity.this,
 					"loginSuccess  " + userInfoModel.sessionId,
 					Toast.LENGTH_SHORT).show();
-			Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
+			Intent intent = new Intent(WelComeActivity.this, SetRoleActivity.class);
 			WelComeActivity.this.startActivity(intent);
 			finish();
 		}

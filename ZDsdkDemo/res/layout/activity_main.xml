@@ -21,14 +21,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
-            android:text="创建角色" />
+            android:text="创建角色" 
+            android:visibility="gone"/>
         
          <Button
             android:id="@+id/setGameInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
-            android:text="设置发行服务器信息" />
+            android:text="设置发行服务器信息" 
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/startUPPay"
@@ -82,7 +84,7 @@
             android:background="@drawable/edig_bg"
             android:gravity="center"
             android:weightSum="3"
-            android:visibility="gone" >
+             >
 
             <EditText
                 android:id="@+id/customPaytEdit"
