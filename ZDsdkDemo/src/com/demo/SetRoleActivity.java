@@ -76,8 +76,8 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_role);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE) ;
+		setContentView(R.layout.activity_role);
 		findViewById(R.id.item_begin).setOnClickListener(this);
 		findViewById(R.id.item_create).setOnClickListener(this);
 		edRoleName = (EditText)findViewById(R.id.role_name);
