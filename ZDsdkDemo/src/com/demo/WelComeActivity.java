@@ -96,6 +96,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			// ZhiDianManager.showLogin(this, iLoginListener);
 			ZDSDK.getInstance(this).login(this, callback);
 			break;
+	
 
 		default:
 			break;
