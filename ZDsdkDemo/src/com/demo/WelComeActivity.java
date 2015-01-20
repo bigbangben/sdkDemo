@@ -86,7 +86,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		Log.e("welcome", "+++++++++++ oncreate +++++++++++");
 		ZDSDK.getInstance(this).init(callback);
 		findViewById(R.id.item_login).setOnClickListener(this);
-		findViewById(R.id.item_define_login).setOnClickListener(this);
 
 	}
 
@@ -97,10 +96,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		case R.id.item_login:
 			// ZhiDianManager.showLogin(this, iLoginListener);
 			ZDSDK.getInstance(this).login(this, callback);
-			break;
-		case R.id.item_define_login:
-			Intent intent = new Intent(this, LoginActivity.class);
-			startActivity(intent);
 			break;
 
 		default:
