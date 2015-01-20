@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
@@ -84,7 +85,13 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		// }
 		Log.e("welcome", "+++++++++++ oncreate +++++++++++");
 		ZDSDK.getInstance(this).init(callback);
-		findViewById(R.id.item_login).setOnClickListener(this);
+		Button button = (Button) findViewById(R.id.item_login);
+		if (button != null) {
+			Log.e("welcome", "+++++++++++ button != null +++++++++++");
+			button.setOnClickListener(this);
+		}else {
+			Log.e("welcome", "+++++++++++ button == null +++++++++++");
+		}
 
 	}
 
