@@ -86,6 +86,8 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		Log.e("welcome", "+++++++++++ oncreate +++++++++++");
 		ZDSDK.getInstance(this).init(callback);
 		Button button = (Button) findViewById(R.id.item_login);
+		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");
+		Log.e("welcome", "++++++   item_login = "+ R.id.item_login +"  +++++++");
 		if (button != null) {
 			Log.e("welcome", "+++++++++++ button != null +++++++++++");
 			button.setOnClickListener(this);
