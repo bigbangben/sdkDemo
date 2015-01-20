@@ -14,7 +14,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="19" />
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取网络状态的权限控制 -->
@@ -137,6 +137,9 @@
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
         </meta-data>
+        <meta-data
+            android:name="gameId"
+            android:value="gameId:23" />
     </application>
 
 </manifest>
