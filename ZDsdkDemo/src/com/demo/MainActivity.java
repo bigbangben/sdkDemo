@@ -106,7 +106,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		mAreaEdit = (EditText) findViewById(R.id.area);
 		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
 		mNotesEdit = (EditText) findViewById(R.id.notes);
-		// ZhiDianManager.showFloadButton(this);
 	}
 
 	@Override
@@ -114,45 +113,25 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (arg0.getId()) {
 		
 		case R.id.createRole:
-			// ZhiDianManager.payNormal(this,"normal notes");
-			// new SMSPay().pay(this, "xxx", "2", "aaa");
 			ZDSDK.getInstance(this).createRole(gameInfo, callback);
+
+			break;
+		case R.id.setGameInfo:
+			ZDSDK.getInstance(this).setGameInfo(this, gameInfo, true, callback);
+
 			break;
 		case R.id.startUPPay:
-			// ZhiDianManager.payNormal(this,"normal notes");
-			// new SMSPay().pay(this, "xxx", "2", "aaa");
 			ZDSDK.getInstance(this).doPay(gameInfo, null, cpOrderId, extInfo, notifyUrl, callback);
 			break;
-
-		case R.id.cancleFloat:
-			// ZhiDianManager.cancleFloadButton();
-			break;
-
 		case R.id.doneCusompay:
-			/*
-			 * ZhiDianManager.customPay(this,
-			 * Integer.parseInt(mMonnyEdit.getText().toString()),"cusompay");
-			 */
 			extInfo = "cusompay";
 			ZDSDK.getInstance(this).doPay(gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
 			 break;
 		case R.id.logout:
-			// ZhiDianManager.logout(this, iLogOutListener);
-			ZDSDK.getInstance(this).logOut(this, gameInfo, callback);
+			ZDSDK.getInstance(this).onSdkLogOut(this, gameInfo, callback);
 			break;
 		case R.id.exit:
-			// ZhiDianManager.exit(this, exitListener);
-			ZDSDK.getInstance(this).exit(gameInfo, callback);
-			break;
-		case R.id.doneArea:
-			// ZhiDianManager.setCpArea(mAreaEdit.getText().toString());
-			// Toast.makeText(this, "分区设置成功", Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.doneNotes:
-			// Toast.makeText(this, "-->"+ZhiDianManager.notes,
-			// Toast.LENGTH_SHORT).show();
-			// ZhiDianManager.setNotes(mNotesEdit.getText().toString());
-			// Toast.makeText(this,ZhiDianManager., Toast.LENGTH_SHORT).show();
+			ZDSDK.getInstance(this).onSdkExit(gameInfo, callback);
 			break;
 		default:
 			break;
