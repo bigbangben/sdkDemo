@@ -92,7 +92,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		gameInfo.setZoneName("big");
 		cpOrderId = "353535";
 		extInfo = "normal notes";
-		notifyUrl = "http://zdsdktest.zhidian3g.cn:888/platform/callback";
+		notifyUrl = "http://zdsdktest.zhidian3g.cn/platform/callback";
 		findViewById(R.id.doneCusompay).setOnClickListener(this);
 		findViewById(R.id.logout).setOnClickListener(this);
 		findViewById(R.id.exit).setOnClickListener(this);
