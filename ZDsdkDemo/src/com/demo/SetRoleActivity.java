@@ -16,9 +16,8 @@ import com.zhidian.issueSDK.model.UserInfoModel;
 
 public class SetRoleActivity extends Activity implements OnClickListener {
 
-	
 	private ICallback callback = new ICallback() {
-		
+
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
 			Intent intent = new Intent(SetRoleActivity.this, MainActivity.class);
@@ -28,46 +27,47 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			SetRoleActivity.this.startActivity(intent);
 			finish();
 		}
-		
+
 		@Override
 		public void paySuccess(String orderid) {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void onError(int type, String message) {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void logoutSuccess() {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void loginSuccess(UserInfoModel userInfoModle) {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void initSuccess() {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void exitSuccess() {
 			// TODO Auto-generated method stub
-			
+
 		}
-		
+
 		@Override
 		public void createRoleSuccess() {
-			Toast.makeText(SetRoleActivity.this, "创建成功", Toast.LENGTH_SHORT).show();	
+			Toast.makeText(SetRoleActivity.this, "创建成功", Toast.LENGTH_SHORT)
+					.show();
 		}
 	};
 	private EditText edRoleName;
@@ -76,11 +76,11 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().requestFeature(Window.FEATURE_NO_TITLE) ;
+		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_role);
 		findViewById(R.id.item_begin).setOnClickListener(this);
 		findViewById(R.id.item_create).setOnClickListener(this);
-		edRoleName = (EditText)findViewById(R.id.role_name);
+		edRoleName = (EditText) findViewById(R.id.role_name);
 	}
 
 	@Override
@@ -101,7 +101,7 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			gameInfo.setRoleName(edRoleName.getText().toString().trim());
 			gameInfo.setZoneId("1111");
 			gameInfo.setZoneName("big");
-			ZDSDK.getInstance(this).createRole(gameInfo, callback);
+			ZDSDK.getInstance().createRole(this, gameInfo, callback);
 			break;
 
 		default:

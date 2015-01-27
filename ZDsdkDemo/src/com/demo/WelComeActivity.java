@@ -84,7 +84,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		// iLoginListener);
 		// }
 		Log.e("welcome", "+++++++++++ oncreate +++++++++++");
-		ZDSDK.getInstance(this).sdkInit(callback);
+		ZDSDK.getInstance().sdkInit(this, callback);
 		Button button = (Button) findViewById(R.id.item_login);
 		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");
 		Log.e("welcome", "++++++   item_login = "+ R.id.item_login +"  +++++++");
@@ -103,7 +103,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.item_login:
 			// ZhiDianManager.showLogin(this, iLoginListener);
-			ZDSDK.getInstance(this).sdkLogin(this, callback);
+			ZDSDK.getInstance().sdkLogin(this, callback);
 			break;
 
 		default:
