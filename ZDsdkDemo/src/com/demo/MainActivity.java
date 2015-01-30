@@ -57,10 +57,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
-			Toast.makeText(MainActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
-			mPayLayout.setVisibility(View.VISIBLE);
 			MainActivity.loginTime = loginTime;
-		}
+			}
 
 		@Override
 		public void exitSuccess() {
@@ -92,19 +90,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		gameInfo.setZoneName("big");
 		cpOrderId = "353535";
 		extInfo = "normal notes";
-		notifyUrl = "http://zdsdktest.zhidian3g.cn:888/platform/callback";
-		findViewById(R.id.createRole).setOnClickListener(this);
-		findViewById(R.id.setGameInfo).setOnClickListener(this);
-		findViewById(R.id.startUPPay).setOnClickListener(this);
+		notifyUrl = "http://zdsdktest.zhidian3g.cn/platform/callback";
 		findViewById(R.id.doneCusompay).setOnClickListener(this);
-		findViewById(R.id.cancleFloat).setOnClickListener(this);
-		findViewById(R.id.testApi).setOnClickListener(this);
 		findViewById(R.id.logout).setOnClickListener(this);
 		findViewById(R.id.exit).setOnClickListener(this);
-		findViewById(R.id.doneArea).setOnClickListener(this);
 		findViewById(R.id.doneNotes).setOnClickListener(this);
 		mPayLayout = (LinearLayout)findViewById(R.id.ll_customPay);
-		mAreaEdit = (EditText) findViewById(R.id.area);
 		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
 		mNotesEdit = (EditText) findViewById(R.id.notes);
 	}
@@ -112,34 +103,37 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		
-		case R.id.createRole:
-			ZDSDK.getInstance(this).createRole(gameInfo, callback);
-			break;
-		case R.id.setGameInfo:
-			ZDSDK.getInstance(this).setGameInfo(this, gameInfo, true, callback);
-			break;
-		case R.id.startUPPay:
-			ZDSDK.getInstance(this).doPay(gameInfo, null, cpOrderId, extInfo, notifyUrl, callback);
-			break;
 		case R.id.doneCusompay:
 			extInfo = "cusompay";
-			ZDSDK.getInstance(this).doPay(gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
+			ZDSDK.getInstance().doPay(this, gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
 			 break;
 		case R.id.logout:
-			ZDSDK.getInstance(this).onSdkLogOut(this, gameInfo, callback);
+			ZDSDK.getInstance().onSdkLogOut(this, gameInfo, callback);
 			break;
 		case R.id.exit:
-			ZDSDK.getInstance(this).onSdkExit(gameInfo, callback);
+			ZDSDK.getInstance().onSdkExit(this, gameInfo, callback);
 			break;
 		default:
 			break;
 		}
 
 	}
+	
+	@Override
+	protected void onResume() {
+		ZDSDK.getInstance().onSdkResume(this);
+		super.onResume();
+	}
+	
+	@Override
+	protected void onPause() {
+		ZDSDK.getInstance().onSdkPause(this);
+		super.onPause();
+	}
 
 	@Override
 	protected void onDestroy() {
+		ZDSDK.getInstance().onSdkDestory();
 		super.onDestroy();
 	};
 }

@@ -15,35 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:orientation="horizontal" >
-        
-          <Button
-            android:id="@+id/createRole"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:text="创建角色" />
-        
-         <Button
-            android:id="@+id/setGameInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:text="设置发行服务器信息" />
 
-        <Button
-            android:id="@+id/startUPPay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:text="支付中心"
-            android:visibility="gone" />
-        <Button
-            android:id="@+id/cancleFloat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:text="取消浮标" 
-            android:visibility="gone"/>
 
         <Button
             android:id="@+id/logout"
@@ -58,15 +30,6 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_bg"
             android:text="退出" />
-
-        <Button
-            android:id="@+id/testApi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:text="testApi"
-            android:visibility="gone" >
-        </Button>
     </LinearLayout>
 
     <LinearLayout
@@ -82,7 +45,7 @@
             android:background="@drawable/edig_bg"
             android:gravity="center"
             android:weightSum="3"
-            android:visibility="gone" >
+             >
 
             <EditText
                 android:id="@+id/customPaytEdit"
@@ -102,29 +65,6 @@
                 android:text="自定义充值" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edig_bg"
-            android:gravity="center"
-            android:weightSum="2" 
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/area"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null" />
-
-            <TextView
-                android:id="@+id/doneArea"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="设置分区" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
