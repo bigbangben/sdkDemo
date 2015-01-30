@@ -57,10 +57,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
-			Toast.makeText(MainActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
-			mPayLayout.setVisibility(View.VISIBLE);
 			MainActivity.loginTime = loginTime;
-		}
+			}
 
 		@Override
 		public void exitSuccess() {
