@@ -49,7 +49,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			Toast.makeText(WelComeActivity.this,
 					"loginSuccess  " + userInfoModel.sessionId,
 					Toast.LENGTH_SHORT).show();
-			Intent intent = new Intent(WelComeActivity.this, MainActivity.class);
+			Intent intent = new Intent(WelComeActivity.this, SetRoleActivity.class);
 			WelComeActivity.this.startActivity(intent);
 			finish();
 		}
