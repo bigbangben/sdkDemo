@@ -59,6 +59,10 @@
                 android:name="com.demo.LoginActivity"
                 android:screenOrientation="landscape" >
             </activity>
+            <activity
+                android:name="com.demo.SetRoleActivity"
+                android:screenOrientation="landscape" >
+            </activity>
 
         <meta-data
             android:name="appId"
