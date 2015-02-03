@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.demo.nearme.gamecenter.R;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.GameInfo;
