@@ -58,14 +58,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.demo.MainActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.demo.LoginActivity"
-            android:screenOrientation="landscape" >
-        </activity>
+
+            <activity
+                android:name="com.demo.MainActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity
+                android:name="com.demo.LoginActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity
+                android:name="com.demo.SetRoleActivity"
+                android:screenOrientation="landscape" >
+            </activity>
 
         <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
         <activity
