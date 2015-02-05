@@ -116,14 +116,18 @@
             android:windowSoftInputMode="adjustPan" />
         <!-- 91社区 -->
 
-        <activity
-            android:name="com.demo.MainActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.demo.LoginActivity"
-            android:screenOrientation="landscape" >
-        </activity>
+            <activity
+                android:name="com.demo.MainActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity
+                android:name="com.demo.LoginActivity"
+                android:screenOrientation="landscape" >
+            </activity>
+            <activity
+                android:name="com.demo.SetRoleActivity"
+                android:screenOrientation="landscape" >
+            </activity>
 
         <meta-data
             android:name="appId"
