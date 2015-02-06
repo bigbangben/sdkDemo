@@ -16,5 +16,13 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="progressBar_loading" parent="android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/game_loading</item>
+        <item name="android:maxHeight">75dip</item>
+        <item name="android:maxWidth">75dip</item>
+        <item name="android:minWidth">75dip</item>
+        <item name="android:minHeight">75dip</item>
+    </style>
 
 </resources>
