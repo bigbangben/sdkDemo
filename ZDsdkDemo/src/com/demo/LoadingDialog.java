@@ -6,8 +6,6 @@ import android.content.Context;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.zhidian.amber.uc.R;
-
 /**
  * 加载对话框
  * @author zhaoyl

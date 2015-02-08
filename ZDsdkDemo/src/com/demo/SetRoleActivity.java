@@ -9,11 +9,6 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.zhidian.issueSDK.ICallback;
-import com.zhidian.issueSDK.ZDSDK;
-import com.zhidian.issueSDK.model.GameInfo;
-import com.zhidian.issueSDK.model.UserInfoModel;
-
 public class SetRoleActivity extends Activity implements OnClickListener {
 
 	private ICallback callback = new ICallback() {
