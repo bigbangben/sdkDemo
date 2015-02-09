@@ -10,6 +10,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.zhidian.issueSDK.ICallback;
+import com.zhidian.issueSDK.ZDSDK;
+import com.zhidian.issueSDK.model.GameInfo;
+import com.zhidian.issueSDK.model.UserInfoModel;
+import com.zhidian.issueSDK.util.SDKLog;
+
 public class MainActivity extends Activity implements OnClickListener {
 	public static String loginTime = "";
 	private EditText mPageEdit;
