@@ -15,7 +15,8 @@ import com.zhidian.issueSDK.model.GameInfo;
 import com.zhidian.issueSDK.model.UserInfoModel;
 
 public class SetRoleActivity extends Activity implements OnClickListener {
-
+	
+    private LoadingDialog mDialog;
 	private ICallback callback = new ICallback() {
 
 		@Override
@@ -66,6 +67,9 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void createRoleSuccess() {
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 			Toast.makeText(SetRoleActivity.this, "创建成功", Toast.LENGTH_SHORT)
 					.show();
 		}
@@ -95,12 +99,14 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			finish();
 			break;
 		case R.id.item_create:
+			mDialog.show();
 			gameInfo = new GameInfo();
 			gameInfo.setRoleId("111111");
 			gameInfo.setRoleLevel("11");
 			gameInfo.setRoleName(edRoleName.getText().toString().trim());
 			gameInfo.setZoneId("1111");
 			gameInfo.setZoneName("big");
+			mDialog = new LoadingDialog(this, "创建中……");
 			ZDSDK.getInstance().createRole(this, gameInfo, callback);
 			break;
 

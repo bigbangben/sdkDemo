@@ -30,7 +30,7 @@
             android:layout_marginLeft="3.0dp"
             android:layout_marginTop="20dip"
             android:textSize="16.0sp" 
-            android:visibility="gone"/>
+            />
     </LinearLayout>
 
 </LinearLayout>
