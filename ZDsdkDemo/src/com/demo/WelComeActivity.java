@@ -21,6 +21,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 	private static String TAG = "WelComeActivity";
 	private boolean isLogout = false;
 	public static String LOGOUT = "LOGOUT";
+	private LoadingDialog mDialog;
 	private ICallback callback = new ICallback() {
 
 		@Override
@@ -41,6 +42,9 @@ public class WelComeActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void initSuccess() {
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 			Toast.makeText(WelComeActivity.this, "initSuccess",
 					Toast.LENGTH_SHORT).show();
 		}
@@ -85,6 +89,8 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		// iLoginListener);
 		// }
 		Log.e("welcome", "+++++++++++ oncreate +++++++++++");
+		mDialog = new LoadingDialog(this, "初始化中……");
+		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
 		Button button = (Button) findViewById(R.id.item_login);
 		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");

@@ -23,10 +23,14 @@ public class MainActivity extends Activity implements OnClickListener {
 	private EditText mAreaEdit;
 	private EditText mMonnyEdit;
 	private EditText mNotesEdit;
+	private LoadingDialog mDialog;
 	private ICallback callback = new ICallback() {
 
 		@Override
 		public void paySuccess(String orderid) {
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 
 		}
 
@@ -107,6 +111,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (arg0.getId()) {
 		case R.id.doneCusompay:
 			extInfo = "cusompay";
+			mDialog = new LoadingDialog(this, "支付中……");
 			ZDSDK.getInstance().doPay(this, gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
 			 break;
 		case R.id.logout:
