@@ -50,6 +50,9 @@ public class WelComeActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void loginSuccess(UserInfoModel userInfoModel) {
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 			Toast.makeText(WelComeActivity.this,
 					"loginSuccess  " + userInfoModel.sessionId,
 					Toast.LENGTH_SHORT).show();
@@ -109,6 +112,8 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.item_login:
 			// ZhiDianManager.showLogin(this, iLoginListener);
+			mDialog.setMessage("登录中……");
+			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
 			break;
 
