@@ -1,6 +1,8 @@
 package com.demo;
 
 
+import com.zhidian.amber.uc.R;
+
 import android.app.Dialog;
 import android.content.Context;
 import android.widget.ProgressBar;

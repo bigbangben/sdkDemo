@@ -10,6 +10,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.zhidian.amber.uc.R;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.InitInfo;
