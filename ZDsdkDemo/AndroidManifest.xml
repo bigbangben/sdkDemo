@@ -97,7 +97,7 @@
 
         <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
         <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
-        <meta-data>
+        <meta-data
             android:name="QHOPENSDK_APPKEY"
             android:value="40993979094cc49fbc10b6d2d107f480" >
         </meta-data>
@@ -107,6 +107,15 @@
         <meta-data
             android:name="QHOPENSDK_PRIVATEKEY"
             android:value="ad8543ebf2c9bf28e63a060a9462671c" >
+        </meta-data>
+        
+        <meta-data
+            android:name="screenOrientation"
+            android:value="screenOrientation:0" >
+        </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150204878739" >
         </meta-data>
 
         <!-- *   如下是需要加载的360推送配置项  * -->
