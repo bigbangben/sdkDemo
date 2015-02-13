@@ -7,8 +7,8 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
-    
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 获取网络状态的权限控制 -->
@@ -29,13 +29,12 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
     <!-- 短信 -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
-     <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
-        
     </uses-permission>
 
     <application
@@ -53,22 +52,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-            <activity
-                android:name="com.demo.MainActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.demo.LoginActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.demo.SetRoleActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            
-              <!-- activity for sdk all begin -->
+        <activity
+            android:name="com.demo.MainActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.demo.LoginActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.demo.SetRoleActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+
+        <!-- activity for sdk all begin -->
         <!-- activity for sdk core -->
-        
+
         <activity
             android:name="com.nearme.gamecenter.open.core.WebActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" >
@@ -81,7 +80,7 @@
         <activity
             android:name="com.nearme.gamecenter.open.core.LoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme_Dialog_Custom"  >
+            android:theme="@style/Theme_Dialog_Custom" >
         </activity>
         <activity
             android:name="com.nearme.gamecenter.open.core.WebViewBarActivity"
@@ -93,7 +92,6 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.KebiChargeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -118,56 +116,48 @@
             android:launchMode="singleTask"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.KebiFixedPayActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.RegistActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.AccountLoginActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.FastRegActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.PhoneRegActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.OneKeyRegSuccessActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme_Dialog_Custom"  >
+            android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.NormalPhoneRegActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme_Dialog_Custom"  >
+            android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-        
         <activity
             android:name="com.nearme.gamecenter.open.core.NormalRegActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:theme="@style/Theme_Dialog_Custom"  >
+            android:theme="@style/Theme_Dialog_Custom" >
         </activity>
-    
+
         <!-- activity for sdk upgrade -->
         <activity
             android:name="com.oppo.upgrade.activity.ForceUpgradeDialog"
@@ -187,8 +177,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        
-        
+
         <!-- activity for sdk charge begin -->
         <!-- 支付相关的activity -->
         <activity
@@ -275,7 +264,8 @@
 
         <!-- 支付相关的activity -->
 
-        <!--alipay sdk begin -->
+
+        <!-- alipay sdk begin -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -287,8 +277,9 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind" >
-    	</activity>
-    	<!--alipay sdk end -->
+        </activity>
+        <!-- alipay sdk end -->
+
 
         <!-- 彩客wo+相关的activity -->
         <activity
@@ -322,9 +313,11 @@
         <meta-data
             android:name="CHINA_UNICOM_MOBILE_CHANNEL"
             android:value="23" />
-        
-        <meta-data android:name="ShieldSmsTag" android:value="Shield"/>
+        <meta-data
+            android:name="ShieldSmsTag"
+            android:value="Shield" />
         <!-- 彩客wo+相关的activity -->
+
 
         <!-- 银联配置 -->
 
@@ -370,28 +363,38 @@
         <!-- Upay 支付专用的Receiver设置 -->
         <receiver android:name="com.youge.upay_sms_sdk_demo.UpaySentReceiver" >
         </receiver>
-        <!-- activity for sdk charge end --> 
+        <!-- activity for sdk charge end -->
         <!-- activity for sdk all end !!! -->
 
         <meta-data
             android:name="appId"
-            android:value="appId:130502526490" >
+            android:value="appId:c5217trjnrmU6gO5jG8VvUFU0" >
         </meta-data>
         <meta-data
             android:name="appKey"
-            android:value="appKey:1411210225" >
+            android:value="appKey:c5217trjnrmU6gO5jG8VvUFU0" >
+        </meta-data>
+        <meta-data
+            android:name="appSecret"
+            android:value="appSecret:e2eCa732422245E8891F6555e999878B" >
         </meta-data>
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
+
             <!-- 控制屏幕方向 0为横屏 1为竖屏 -->
         </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150204878739" >
+        </meta-data>
     </application>
-<supports-screens
+
+    <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
         android:resizeable="true"
         android:smallScreens="true" />
-    
+
 </manifest>
