@@ -112,8 +112,8 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.item_login:
 			// ZhiDianManager.showLogin(this, iLoginListener);
-			mDialog.setMessage("登录中……");
-			mDialog.show();
+			//mDialog.setMessage("登录中……");
+			//mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
 			break;
 
