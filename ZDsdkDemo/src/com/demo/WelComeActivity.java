@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
-import com.zhidian.issueSDK.model.InitInfo;
 import com.zhidian.issueSDK.model.UserInfoModel;
 import com.zhidian.issueSDK.util.SDKLog;
 
@@ -80,7 +79,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		}
 
 	};
-	private InitInfo initInfo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
