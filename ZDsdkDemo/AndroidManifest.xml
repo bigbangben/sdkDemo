@@ -101,7 +101,7 @@
         </meta-data>
         <meta-data
             android:name="gameId"
-            android:value="gameId:553271" >
+            android:value="gameId:553560" >
         </meta-data>
         <meta-data
             android:name="screenOrientation"
@@ -109,7 +109,7 @@
         </meta-data>
         <meta-data
             android:name="ZD_APPID"
-            android:value="ZD_APPID:150204878739" >
+            android:value="ZD_APPID:150212661932" >
         </meta-data>
     </application>
 
