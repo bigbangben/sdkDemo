@@ -74,6 +74,66 @@
             android:configChanges="keyboardHidden|orientation|screenSize" >
         </activity>
 
+        <!-- vivo activity begin -->
+        <activity
+            android:name="com.vivo.account.base.activity.LoginActivity"
+            android:label="@string/vivo_app_name"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vivo.account.base.activity.RegisterActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" 
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vivo.account.base.activity.VerifyPhoneNumActivity"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vivo.account.base.activity.FindPasswordActivity"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vivo.account.base.activity.SetPassWordActivity"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:screenOrientation="landscape"  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.vivo.account.base.activity.RegisterProtocolActivity"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="landscape" >
+        </activity>
+        <!-- vivo activity end -->
+
         <meta-data
             android:name="appId"
             android:value="appId:130502526490" >
