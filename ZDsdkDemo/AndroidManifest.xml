@@ -78,8 +78,8 @@
         <activity
             android:name="com.vivo.account.base.activity.LoginActivity"
             android:label="@string/vivo_app_name"
-            android:theme="@android:style/Theme.NoTitleBar" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -88,9 +88,9 @@
         </activity>
         <activity
             android:name="com.vivo.account.base.activity.RegisterActivity"
+            android:screenOrientation="landscape"
             android:theme="@android:style/Theme.NoTitleBar"
-            android:windowSoftInputMode="stateAlwaysHidden" 
-            android:screenOrientation="landscape" >
+            android:windowSoftInputMode="stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -99,8 +99,8 @@
         </activity>
         <activity
             android:name="com.vivo.account.base.activity.VerifyPhoneNumActivity"
-            android:theme="@android:style/Theme.NoTitleBar" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -109,8 +109,8 @@
         </activity>
         <activity
             android:name="com.vivo.account.base.activity.FindPasswordActivity"
-            android:theme="@android:style/Theme.NoTitleBar" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -119,8 +119,8 @@
         </activity>
         <activity
             android:name="com.vivo.account.base.activity.SetPassWordActivity"
-            android:theme="@android:style/Theme.NoTitleBar"
-            android:screenOrientation="landscape"  >
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -129,22 +129,18 @@
         </activity>
         <activity
             android:name="com.vivo.account.base.activity.RegisterProtocolActivity"
-            android:theme="@android:style/Theme.NoTitleBar" 
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <!-- vivo activity end -->
 
         <meta-data
-            android:name="appId"
-            android:value="appId:130502526490" >
-        </meta-data>
-        <meta-data
-            android:name="appKey"
-            android:value="appKey:1411210225" >
-        </meta-data>
-        <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
+        </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150212661932" >
         </meta-data>
     </application>
 
