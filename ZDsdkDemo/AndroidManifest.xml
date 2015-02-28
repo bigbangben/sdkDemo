@@ -50,6 +50,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.demo.MainActivity"
             android:screenOrientation="landscape" >
@@ -66,7 +67,6 @@
             android:name="com.zhidian.gamesdk.ui.ZhidianActivity"
             android:screenOrientation="landscape" >
         </activity>
-
         <meta-data
             android:name="channelId"
             android:value="channelId:14112403234" >
