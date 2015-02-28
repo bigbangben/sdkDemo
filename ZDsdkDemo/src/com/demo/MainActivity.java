@@ -93,7 +93,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		gameInfo.setRoleName(roleName);
 		gameInfo.setZoneId("1");
 		gameInfo.setZoneName("big");
-		ZDSDK.getInstance().setGameInfo(this, gameInfo, true, callback);
 		cpOrderId = "353535";
 		extInfo = "normal notes";
 		notifyUrl = "http://zdsdktest.zhidian3g.cn/platform/callback";

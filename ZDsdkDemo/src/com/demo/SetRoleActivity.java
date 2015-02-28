@@ -100,6 +100,7 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			finish();
 			break;
 		case R.id.item_create:
+			mDialog = new LoadingDialog(this, "创建中……");
 			mDialog.show();
 			gameInfo = new GameInfo();
 			gameInfo.setRoleId("111111");
@@ -107,7 +108,6 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			gameInfo.setRoleName(edRoleName.getText().toString().trim());
 			gameInfo.setZoneId("1111");
 			gameInfo.setZoneName("big");
-			mDialog = new LoadingDialog(this, "创建中……");
 			ZDSDK.getInstance().createRole(this, gameInfo, callback);
 			break;
 
