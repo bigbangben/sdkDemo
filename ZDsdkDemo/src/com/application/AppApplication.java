@@ -3,7 +3,7 @@ package com.application;
 import android.app.Application;
 
 
-public class AppApplication extends Application {
+public class AppApplication extends MarioPluginApplication {
 
 	/**
 	 * 是否测试模式

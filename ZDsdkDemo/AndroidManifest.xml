@@ -33,8 +33,26 @@
     <uses-permission android:name="android.permission.WRITE_SMS" />
      <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
-        
     </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TOP_ACTIVITY_INFO" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.NFC" />
 
     <application
         android:name="com.application.AppApplication"
@@ -63,18 +81,130 @@
                 android:name="com.demo.SetRoleActivity"
                 android:screenOrientation="landscape" >
             </activity>
+            
+       <!--  pay sdk plugin -->
+        <activity
+            android:name="com.wandoujia.oakenshield.activity.OakenshieldActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
 
-        <meta-data
-            android:name="appId"
-            android:value="appId:130502526490" >
-        </meta-data>
-        <meta-data
-            android:name="appKey"
-            android:value="appKey:1411210225" >
-        </meta-data>
+            <intent-filter>
+                <action android:name="com.wandoujia.oakenshield"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- Make sure to replace XXX by your AppKeyid -->
+                <data android:scheme="Wandoujia-PaySdk-100008237"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Alipay SDK begin -->
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniLaucherActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/MspAppTheme" >
+            <intent-filter>
+                <action android:name="com.alipay.mobilepay.android" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.taobao.android.ski.NODERIVATION"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniPayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+
+            android:launchMode="singleTop"
+            android:process="com.alipay.sdk"
+            android:screenOrientation="portrait"
+            android:theme="@style/MspAppTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+            <intent-filter android:priority="800" >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.alipay.android.mini.window.sdk.MiniWebActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:process="com.alipay.sdk"
+            android:theme="@style/MspAppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.alipay.android.app.MspService"
+                 android:process="com.alipay.sdk"
+                 android:exported="false" >
+            <intent-filter android:priority="800" >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+
+        <!-- Alipay SDK end -->
+        <!-- UnionPay start -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivityEx"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.Run"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:scheme="uppay"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.UCMobile.PayPlugin.PayPluginService">
+            <intent-filter>
+                <action android:name="android.webkit.PLUGIN"/>
+            </intent-filter>
+            <meta-data
+                android:name="type"
+                android:value="native"/>
+        </service>
+        <activity android:name="com.unionpay.uppay.PayActivity">
+        </activity>
+        <!-- UnionPay end -->
+
+        <activity
+            android:name="com.shandianshua.nen.activity.PayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleTask"/>
+
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
+        </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150212661932" >
         </meta-data>
     </application>
 <supports-screens
