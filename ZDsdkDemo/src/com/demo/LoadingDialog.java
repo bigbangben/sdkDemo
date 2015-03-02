@@ -1,6 +1,7 @@
 package com.demo;
 
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.widget.ProgressBar;
