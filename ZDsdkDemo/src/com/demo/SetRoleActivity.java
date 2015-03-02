@@ -38,8 +38,15 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void onError(int type, String message) {
-			// TODO Auto-generated method stub
+			switch (type) {
+			case ICallback.CREATE_ROLE:
+				mDialog.dismiss();
+				Toast.makeText(SetRoleActivity.this, message, Toast.LENGTH_SHORT).show();
+				break;
 
+			default:
+				break;
+			}
 		}
 
 		@Override
