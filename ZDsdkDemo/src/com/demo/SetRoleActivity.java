@@ -41,8 +41,7 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			switch (type) {
 			case ICallback.CREATE_ROLE:
 				mDialog.dismiss();
-				Toast.makeText(SetRoleActivity.this, message, Toast.LENGTH_SHORT)
-				.show();
+				Toast.makeText(SetRoleActivity.this, message, Toast.LENGTH_SHORT).show();
 				break;
 
 			default:

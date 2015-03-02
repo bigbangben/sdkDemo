@@ -32,7 +32,10 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		@Override
 		public void onError(int type, String message) {
 			SDKLog.e(TAG, "onError >>>>>>>  " + message);// FIXME
-
+			Toast.makeText(WelComeActivity.this, message, Toast.LENGTH_SHORT).show();
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 		}
 
 		@Override
