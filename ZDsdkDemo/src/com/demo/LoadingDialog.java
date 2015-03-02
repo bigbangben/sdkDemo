@@ -6,6 +6,8 @@ import android.content.Context;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.demo.am.R;
+
 /**
  * 加载对话框
  * @author zhaoyl
