@@ -35,6 +35,24 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" >
         
     </uses-permission>
+    
+    <!-- common -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- bank -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.webkit.permission.PLUGIN" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="com.tencent.mtt.extension.Player" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- download -->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
     <application
         android:name="com.application.AppApplication"
@@ -63,6 +81,195 @@
                 android:name="com.demo.SetRoleActivity"
                 android:screenOrientation="landscape" >
             </activity>
+            
+             <!--alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <!--微信 回调类    cp包名 + wxapi.WXPayEntryActivity -->
+        <activity
+            android:name="com.yingyonghui.market.wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.appchina.pay360.Account"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.appchina.pay360.Test"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.iapppay.mpay.ifmgr.PayManagerActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <service
+            android:name="com.iapppay.mpay.downmgr.DownLoadService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <!-- 银联 -->
+        <activity
+            android:name="com.umpay.quickpay.UmpayActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/ump_translucent"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 一键支付 -->
+
+        <activity
+            android:name="com.iapppay.oneclickpay.FastPayActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.iapppay.oneclickpay.InputCardActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.iapppay.oneclickpay.LLUnbindCardActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.iapppay.oneclickpay.YPUnbindCardActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.iapppay.oneclickpay.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.iapppay.oneclickpay.AgreementActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.fastpay.sdk.activity.FastPay"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- yyh usersdk -->
+        
+        <activity
+            android:name="com.appchina.usersdk.YYHLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/YYHDialogThemeDialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appchina.usersdk.YYHLoginDialogActivity"
+            android:theme="@style/YYHDialogThemeHigh" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.appchina.usersdk.YYHAccountCenter" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.appchina.usersdk.YYHSplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 如果你使用mo9的SDK接入，请你在的AndroidManifest.xml文件中添加如下Activity配置. -->
+        <activity
+            android:name="com.mokredit.payment.MktPayment"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <!-- 如果你使用NOW的SDK接入，请你在的AndroidManifest.xml文件中添加如下Activity配置. -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.Run" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.unionpay.uppay.PayActivityEx"
+            android:configChanges="keyboardHidden|orientation"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.Run" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="uppay" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.UCMobile.PayPlugin.PayPluginService" >
+            <intent-filter>
+                <action android:name="android.webkit.PLUGIN" />
+            </intent-filter>
+
+            <meta-data
+                android:name="type"
+                android:value="native" />
+        </service>
+
+        <meta-data
+            android:name="plugin_activityname"
+            android:value="com.unionpay.uppay.PayActivity" />
+
+        <!-- appkey与appid以后会由cp提供， 这里添加只为测试方便 -->
+        <meta-data
+            android:name="APPCHINA_ACCOUNT_APPKEY"
+            android:value="APPCHINA_ACCOUNT_APPKEY:3c480af8" />
+        <meta-data
+            android:name="APPCHINA_ACCOUNT_APPID"
+            android:value="APPCHINA_ACCOUNT_APPID:1" />
+        <!-- end -->
 
         <meta-data
             android:name="screenOrientation"
