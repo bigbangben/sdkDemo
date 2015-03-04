@@ -265,10 +265,10 @@
         <!-- appkey与appid以后会由cp提供， 这里添加只为测试方便 -->
         <meta-data
             android:name="APPCHINA_ACCOUNT_APPKEY"
-            android:value="APPCHINA_ACCOUNT_APPKEY:3c480af8" />
+            android:value="3c480af8" />
         <meta-data
             android:name="APPCHINA_ACCOUNT_APPID"
-            android:value="APPCHINA_ACCOUNT_APPID:1" />
+            android:value="1" />
         <!-- end -->
 
         <meta-data
