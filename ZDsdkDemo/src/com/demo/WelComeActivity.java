@@ -98,6 +98,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		mDialog = new LoadingDialog(this, "初始化中……");
 		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
+		Log.e("welcome", "+++++++++++ getPlatformId() = " + ZDSDK.getInstance().getPlatformId() + " +++++++++++");
 		Button button = (Button) findViewById(R.id.item_login);
 		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");
 		Log.e("welcome", "++++++   item_login = "+ R.id.item_login +"  +++++++");
