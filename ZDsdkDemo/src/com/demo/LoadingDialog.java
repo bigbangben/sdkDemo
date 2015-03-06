@@ -1,12 +1,13 @@
 package com.demo;
 
 
-import com.zhidian.amber.mi.R;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.timo.km.mi.R;
+
 
 /**
  * 加载对话框

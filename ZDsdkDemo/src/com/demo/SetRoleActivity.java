@@ -9,7 +9,7 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.zhidian.amber.mi.R;
+import com.timo.km.mi.R;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.GameInfo;
