@@ -151,6 +151,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onStop() {
 		super.onStop();
+		ZDSDK.getInstance().onSdkStop(this);
 	}
 
 	@Override
