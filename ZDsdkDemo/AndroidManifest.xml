@@ -118,6 +118,7 @@
             android:value="ZD_APPID:150212661932" >
         </meta-data>
 
+
         <!-- *   如下是需要加载的360推送配置项  * -->
         <!-- 开机自启 -->
         <receiver
@@ -175,6 +176,8 @@
             android:exported="false"
             android:process=":QLocal" >
         </service>
+=======
+>>>>>>> master
     </application>
 
     <supports-screens
