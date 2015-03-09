@@ -121,5 +121,29 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			break;
 		}
 	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		ZDSDK.getInstance().onSdkPause(this);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		ZDSDK.getInstance().onSdkStop(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		ZDSDK.getInstance().onSdkResume(this);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		ZDSDK.getInstance().onSdkDestory();
+	}
 
 }
