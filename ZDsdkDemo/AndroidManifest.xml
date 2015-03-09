@@ -627,11 +627,11 @@
         <!-- ↑↑↑ 多酷SDK ↑↑↑ -->
         <meta-data
             android:name="appId"
-            android:value="appId:5436585" >
+            android:value="appId:3067515" >
         </meta-data>
         <meta-data
             android:name="appKey"
-            android:value="appKey:Ds8MfnhMKo3KBGjl6EkzLyp1" >
+            android:value="appKey:f3Os4GAOqxgm79GqbnkT9L8T" >
         </meta-data>
         <meta-data
             android:name="screenOrientation"
