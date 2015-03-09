@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.baidu.gamesdk.ActivityAdPage;
+import com.baidu.gamesdk.ActivityAdPage.Listener;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.GameInfo;
@@ -80,6 +82,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private String extInfo;
 	private String cpOrderId;
 	private LinearLayout mPayLayout;
+	private ActivityAdPage mActivityAdPage;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		mPayLayout = (LinearLayout)findViewById(R.id.ll_customPay);
 		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
 		mNotesEdit = (EditText) findViewById(R.id.notes);
+	/*	mActivityAdPage = new ActivityAdPage(this, new Listener() {
+
+			@Override
+			public void onClose() {
+
+			}
+			}
+		);*/
 	}
 
 	@Override
@@ -127,19 +138,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	@Override
 	protected void onResume() {
-		ZDSDK.getInstance().onSdkResume(this);
 		super.onResume();
+		ZDSDK.getInstance().onSdkResume(this);
 	}
 	
 	@Override
 	protected void onPause() {
-		ZDSDK.getInstance().onSdkPause(this);
 		super.onPause();
+		ZDSDK.getInstance().onSdkPause(this);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
 	}
 
 	@Override
 	protected void onDestroy() {
-		ZDSDK.getInstance().onSdkDestory();
 		super.onDestroy();
+		ZDSDK.getInstance().onSdkDestory();
 	};
 }

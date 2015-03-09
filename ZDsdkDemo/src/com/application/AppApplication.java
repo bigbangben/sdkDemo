@@ -1,9 +1,11 @@
 package com.application;
 
+import com.baidu.gamesdk.BDGameApplication;
+
 import android.app.Application;
 
 
-public class AppApplication extends Application {
+public class AppApplication extends BDGameApplication {
 
 	/**
 	 * 是否测试模式
