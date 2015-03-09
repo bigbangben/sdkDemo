@@ -128,14 +128,20 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	@Override
 	protected void onResume() {
-		ZDSDK.getInstance().onSdkResume(this);
 		super.onResume();
+		ZDSDK.getInstance().onSdkResume(this);
 	}
 	
 	@Override
 	protected void onPause() {
-		ZDSDK.getInstance().onSdkPause(this);
 		super.onPause();
+		ZDSDK.getInstance().onSdkPause(this);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		ZDSDK.getInstance().onSdkStop(this);
 	}
 
 	@Override
