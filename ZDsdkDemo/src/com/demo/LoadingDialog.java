@@ -1,8 +1,6 @@
 package com.demo;
 
 
-import com.zhidian.amber.uc.R;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.widget.ProgressBar;
@@ -18,11 +16,11 @@ public class LoadingDialog extends Dialog{
 	public TextView mTvMessage;
 	public ProgressBar mBar;
 	public LoadingDialog(Context context) {
-		super(context,R.style.Dialog);
+		super(context,ResUtil.getStyle(context, "Dialog"));
 		this.setCanceledOnTouchOutside(false);
-		setContentView(R.layout.dialog_loading);
-		mTvMessage = (TextView) findViewById(R.id.loading_message);
-		mBar = (ProgressBar)findViewById(R.id.loading_pb);
+		setContentView(ResUtil.getLayout(context, "dialog_loading"));
+		mTvMessage = (TextView) findViewById(ResUtil.getId(context, "loading_message"));
+		mBar = (ProgressBar)findViewById(ResUtil.getId(context, "loading_pb"));
 	}
 	
 	public LoadingDialog(Context context, CharSequence message) {

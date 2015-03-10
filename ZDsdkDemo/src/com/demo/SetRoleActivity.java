@@ -9,7 +9,6 @@ import android.view.Window;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.zhidian.amber.uc.R;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.GameInfo;
@@ -89,24 +88,22 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_role);
-		findViewById(R.id.item_begin).setOnClickListener(this);
-		findViewById(R.id.item_create).setOnClickListener(this);
-		edRoleName = (EditText) findViewById(R.id.role_name);
+		setContentView(ResUtil.getLayout(this, "activity_role"));
+		findViewById(ResUtil.getId(this, "item_begin")).setOnClickListener(this);
+		findViewById(ResUtil.getId(this, "item_create")).setOnClickListener(this);
+		edRoleName = (EditText) findViewById(ResUtil.getId(this, "role_name"));
 	}
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.item_begin:
+		if (v.getId() == ResUtil.getId(this, "item_begin")) {
 			Intent intent = new Intent(SetRoleActivity.this, MainActivity.class);
 			Bundle bundle = new Bundle();
 			bundle.putString("RoleName", edRoleName.getText().toString().trim());
 			intent.putExtras(bundle);
 			SetRoleActivity.this.startActivity(intent);
 			finish();
-			break;
-		case R.id.item_create:
+		}else if (v.getId() == ResUtil.getId(this, "item_create")) {
 			mDialog = new LoadingDialog(this, "创建中……");
 			mDialog.show();
 			gameInfo = new GameInfo();
@@ -116,11 +113,30 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			gameInfo.setZoneId("54");
 			gameInfo.setZoneName("big");
 			ZDSDK.getInstance().createRole(this, gameInfo, callback);
-			break;
-
-		default:
-			break;
 		}
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		ZDSDK.getInstance().onSdkPause(this);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		ZDSDK.getInstance().onSdkStop(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		ZDSDK.getInstance().onSdkResume(this);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
 	}
 
 }
