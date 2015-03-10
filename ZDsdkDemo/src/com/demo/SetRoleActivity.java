@@ -110,7 +110,7 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			gameInfo.setRoleId("111111");
 			gameInfo.setRoleLevel("11");
 			gameInfo.setRoleName(edRoleName.getText().toString().trim());
-			gameInfo.setZoneId("1111");
+			gameInfo.setZoneId("54");
 			gameInfo.setZoneName("big");
 			ZDSDK.getInstance().createRole(this, gameInfo, callback);
 		}

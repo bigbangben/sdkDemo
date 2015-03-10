@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
@@ -98,9 +97,9 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		mDialog = new LoadingDialog(this, "初始化中……");
 		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
+
 		//findViewById(ResUtil.getId(this, "item_login")).setOnClickListener(this);
 	
-
 	}
 
 	@Override
