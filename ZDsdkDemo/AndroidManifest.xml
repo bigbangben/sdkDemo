@@ -35,7 +35,6 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer" />
     <!-- 短信 -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
@@ -48,6 +47,7 @@
     </uses-permission>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" >
     </uses-permission>
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
 
     <application
         android:name="com.application.AppApplication"
@@ -116,18 +116,18 @@
             android:windowSoftInputMode="adjustPan" />
         <!-- 91社区 -->
 
-            <activity
-                android:name="com.demo.MainActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.demo.LoginActivity"
-                android:screenOrientation="landscape" >
-            </activity>
-            <activity
-                android:name="com.demo.SetRoleActivity"
-                android:screenOrientation="landscape" >
-            </activity>
+        <activity
+            android:name="com.demo.MainActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.demo.LoginActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.demo.SetRoleActivity"
+            android:screenOrientation="landscape" >
+        </activity>
 
         <meta-data
             android:name="appId"
@@ -143,7 +143,21 @@
         </meta-data>
         <meta-data
             android:name="gameId"
-            android:value="gameId:23" />
+            android:value="gameId:23" >
+        </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150212661932" >
+        </meta-data>
     </application>
+    <application>
+    </application>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
 
 </manifest>
