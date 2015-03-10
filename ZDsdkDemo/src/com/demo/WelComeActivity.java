@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
-import com.zhidian.issueSDK.model.InitInfo;
 import com.zhidian.issueSDK.model.UserInfoModel;
 import com.zhidian.issueSDK.util.SDKLog;
 
@@ -81,14 +80,13 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		}
 
 	};
-	private InitInfo initInfo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_welcome);
+		setContentView(ResUtil.getLayout(this, "activity_welcome"));
 		isLogout = getIntent().getBooleanExtra(LOGOUT, false);
 		// if (!isLogout) {
 		// ZhiDianManager.init(this,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE,mInitListener,
@@ -98,33 +96,41 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		mDialog = new LoadingDialog(this, "初始化中……");
 		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
-		Button button = (Button) findViewById(R.id.item_login);
-		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");
-		Log.e("welcome", "++++++   item_login = "+ R.id.item_login +"  +++++++");
-		if (button != null) {
-			Log.e("welcome", "+++++++++++ button != null +++++++++++");
-			button.setOnClickListener(this);
-		}else {
-			Log.e("welcome", "+++++++++++ button == null +++++++++++");
-		}
+		findViewById(ResUtil.getId(this, "item_login")).setOnClickListener(this);
+	
 
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.item_login:
-			// ZhiDianManager.showLogin(this, iLoginListener);
+		if (v.getId() == ResUtil.getId(this, "item_login")) {
 			mDialog.setMessage("登录中……");
 			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
-			break;
-
-		default:
-			break;
 		}
-
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		ZDSDK.getInstance().onSdkPause(this);
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		ZDSDK.getInstance().onSdkStop(this);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		ZDSDK.getInstance().onSdkResume(this);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
 	}
 
 }

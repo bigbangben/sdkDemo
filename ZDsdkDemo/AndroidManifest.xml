@@ -27,13 +27,7 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer" />
-    <!-- 短信 -->
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.WRITE_SMS" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" >
-    </uses-permission>
+
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
     <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.DELETE_PACKAGES" />
@@ -46,6 +40,8 @@
     <uses-permission android:name="android.permission.DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <!-- Vivo permission end -->
+    <uses-permission android:name="android.hardware.sensor.accelerometer"/>
+
     <application
         android:name="com.application.AppApplication"
         android:allowBackup="true"
@@ -158,7 +154,6 @@
         </activity>
         
         <!-- vivo activity end -->
-
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
@@ -168,8 +163,8 @@
             android:value="ZD_APPID:150212661932" >
         </meta-data>
     </application>
-
-    <supports-screens
+    
+<supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
         android:normalScreens="true"
