@@ -47,8 +47,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			}
 			Toast.makeText(WelComeActivity.this, "initSuccess",
 					Toast.LENGTH_SHORT).show();
-			mDialog.setMessage("登录中……");
-			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(WelComeActivity.this, callback);
 		}
 
