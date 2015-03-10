@@ -145,7 +145,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		ZDSDK.getInstance().onSdkDestory();
 	}
 
 }
