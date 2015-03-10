@@ -35,6 +35,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void onError(int type, String message) {
+			if (mDialog.isShowing()) {
+				mDialog.cancel();
+			}
 			SDKLog.e("", "onError >>>>>>>  " + message);//FIXME
 			Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
 
@@ -110,6 +113,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		if (v.getId() == ResUtil.getId(this, "doneCusompay")) {
 			extInfo = "cusompay";
 			mDialog = new LoadingDialog(this, "支付中……");
+			mDialog.show();
 			ZDSDK.getInstance().doPay(this, gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
 		}else if (v.getId() == ResUtil.getId(this, "logout")) {
 			ZDSDK.getInstance().onSdkLogOut(this, gameInfo, callback);
