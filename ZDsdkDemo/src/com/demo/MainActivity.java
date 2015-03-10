@@ -85,7 +85,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_main);
+		setContentView(ResUtil.getLayout(this, "activity_main"));
 		gameInfo = new GameInfo();
 		gameInfo.setRoleId("111111");
 		gameInfo.setRoleLevel("11");
@@ -96,34 +96,27 @@ public class MainActivity extends Activity implements OnClickListener {
 		extInfo = "normal notes";
 		notifyUrl = "http://zdsdktest.zhidian3g.cn/platform/callback";
 		ZDSDK.getInstance().setGameInfo(this, gameInfo, true, callback);
-		findViewById(R.id.doneCusompay).setOnClickListener(this);
-		findViewById(R.id.logout).setOnClickListener(this);
-		findViewById(R.id.exit).setOnClickListener(this);
-		findViewById(R.id.doneNotes).setOnClickListener(this);
-		mPayLayout = (LinearLayout)findViewById(R.id.ll_customPay);
-		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
-		mNotesEdit = (EditText) findViewById(R.id.notes);
+		findViewById(ResUtil.getId(this, "doneCusompay")).setOnClickListener(this);
+		findViewById(ResUtil.getId(this, "logout")).setOnClickListener(this);
+		findViewById(ResUtil.getId(this, "exit")).setOnClickListener(this);
+		findViewById(ResUtil.getId(this, "doneNotes")).setOnClickListener(this);
+		mPayLayout = (LinearLayout)findViewById(ResUtil.getId(this, "ll_customPay"));
+		mMonnyEdit = (EditText) findViewById(ResUtil.getId(this, "customPaytEdit"));
+		mNotesEdit = (EditText) findViewById(ResUtil.getId(this, "notes"));
 	}
 
 	@Override
-	public void onClick(View arg0) {
-		switch (arg0.getId()) {
-		case R.id.doneCusompay:
+	public void onClick(View v) {
+		if (v.getId() == ResUtil.getId(this, "doneCusompay")) {
 			extInfo = "cusompay";
 			mDialog = new LoadingDialog(this, "支付中……");
 			ZDSDK.getInstance().doPay(this, gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
-			 break;
-		case R.id.logout:
+		}else if (v.getId() == ResUtil.getId(this, "logout")) {
 			ZDSDK.getInstance().onSdkLogOut(this, gameInfo, callback);
-			break;
-		case R.id.exit:
+		}else if (v.getId() == ResUtil.getId(this, "exit")) {
 			ZDSDK.getInstance().onSdkExit(this, gameInfo, callback);
-			break;
-		default:
-			break;
 		}
-
-	}
+		}
 	
 	@Override
 	protected void onPause() {
