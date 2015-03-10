@@ -56,7 +56,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 				mDialog.cancel();
 			}
 			Toast.makeText(WelComeActivity.this,
-					"loginSuccess  " + userInfoModel.sessionId,
+					"loginSuccess  " + userInfoModel.id,
 					Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(WelComeActivity.this, SetRoleActivity.class);
 			WelComeActivity.this.startActivity(intent);

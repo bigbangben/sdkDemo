@@ -66,6 +66,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
 			MainActivity.loginTime = loginTime;
+			SDKLog.e("", "loginTime >> " + loginTime);
 			}
 
 		@Override
