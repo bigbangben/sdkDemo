@@ -56,7 +56,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 				mDialog.cancel();
 			}
 			Toast.makeText(WelComeActivity.this,
-					"loginSuccess  " + userInfoModel.id,
+					"loginSuccess  " + userInfoModel.sessionId,
 					Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(WelComeActivity.this, SetRoleActivity.class);
 			WelComeActivity.this.startActivity(intent);
@@ -113,8 +113,8 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.item_login:
 			// ZhiDianManager.showLogin(this, iLoginListener);
-			/*mDialog.setMessage("登录中……");
-			mDialog.show();*/
+			mDialog.setMessage("登录中……");
+			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
 			break;
 
@@ -141,7 +141,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		super.onResume();
 		ZDSDK.getInstance().onSdkResume(this);
 	}
-
+	
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();

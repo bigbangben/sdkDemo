@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.baidu.gamesdk.ActivityAdPage;
-import com.baidu.gamesdk.ActivityAdPage.Listener;
 import com.zhidian.issueSDK.ICallback;
 import com.zhidian.issueSDK.ZDSDK;
 import com.zhidian.issueSDK.model.GameInfo;
@@ -37,11 +35,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void onError(int type, String message) {
-			if (mDialog.isShowing()) {
-				mDialog.cancel();
-			}
 			SDKLog.e("", "onError >>>>>>>  " + message);//FIXME
 			Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+
 		}
 
 		@Override
@@ -66,7 +62,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		@Override
 		public void setGameInfoSuccess(String loginTime) {
 			MainActivity.loginTime = loginTime;
-			SDKLog.e("", "loginTime >> " + loginTime);
 			}
 
 		@Override
@@ -85,7 +80,6 @@ public class MainActivity extends Activity implements OnClickListener {
 	private String extInfo;
 	private String cpOrderId;
 	private LinearLayout mPayLayout;
-	private ActivityAdPage mActivityAdPage;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -109,14 +103,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		mPayLayout = (LinearLayout)findViewById(R.id.ll_customPay);
 		mMonnyEdit = (EditText) findViewById(R.id.customPaytEdit);
 		mNotesEdit = (EditText) findViewById(R.id.notes);
-	/*	mActivityAdPage = new ActivityAdPage(this, new Listener() {
-
-			@Override
-			public void onClose() {
-
-			}
-			}
-		);*/
 	}
 
 	@Override
@@ -125,7 +111,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.doneCusompay:
 			extInfo = "cusompay";
 			mDialog = new LoadingDialog(this, "支付中……");
-			mDialog.show();
 			ZDSDK.getInstance().doPay(this, gameInfo, mMonnyEdit.getText().toString(), cpOrderId, extInfo, notifyUrl, callback);
 			 break;
 		case R.id.logout:

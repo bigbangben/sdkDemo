@@ -12,6 +12,8 @@
     <!-- 获取网络状态的权限控制 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
     </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
     <!-- 读取手机状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" >
     </uses-permission>
@@ -21,45 +23,50 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.hardware.sensor.accelerometer"/>
     <!-- 短信 -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
      <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" >
+        
+    </uses-permission>
     
- <!-- ↓↓↓ SDK ↓↓↓ -->
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- ↑↑↑ SDK ↑↑↑ -->
-    
-    <!-- ↓↓↓ DK SDK ↓↓↓ -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <!-- ↑↑↑ DK SDK ↑↑↑ -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> 
 
     <!-- 贴吧  permission start -->
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <!-- 贴吧 permission end -->
-    
 
     <application
         android:name="com.application.AppApplication"
@@ -69,9 +76,7 @@
         <activity
             android:name="com.demo.WelComeActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape" 
-            android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden">
-            
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -80,30 +85,25 @@
         </activity>
             <activity
                 android:name="com.demo.MainActivity"
-                android:screenOrientation="landscape"
-                 android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden" >
+                android:screenOrientation="landscape" >
             </activity>
             <activity
                 android:name="com.demo.LoginActivity"
-                android:screenOrientation="landscape"
-                 android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden" >
+                android:screenOrientation="landscape" >
             </activity>
             <activity
                 android:name="com.demo.SetRoleActivity"
-                android:screenOrientation="landscape" 
-                 android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden">
+                android:screenOrientation="landscape" >
             </activity>
             
-          <!-- ↓↓↓ SDK ↓↓↓ -->
+              <!-- ↓↓↓ SDK ↓↓↓ -->
 
 
         <!-- 0-百度 1-多酷 2-91 -->
 
         <meta-data android:name="BDPlatformType" android:value="0" />
         
-        
         <meta-data android:name="BDGameVersion" android:value="3.1.2" />
-        
         <activity
             android:name="com.baidu.platformsdk.LoginActivity"
             android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden"
@@ -115,7 +115,7 @@
             android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden"
             android:exported="false"
             android:excludeFromRecents="true"
-            android:theme="@style/bdp_dialog_style_fullscreen"/> 
+            android:theme="@style/bdp_style_transparent"/> 
         <activity
             android:name="com.baidu.platformsdk.BindPhoneActivity"
             android:configChanges="orientation|navigation|screenSize|keyboard|keyboardHidden"
@@ -314,7 +314,7 @@
         <!-- ↓↓↓ passport ↓↓↓ -->
         <activity
             android:name="com.baidu.sapi2.utils.LoginProtectAcitivity"
-            android:screenOrientation="portrait"
+            
             android:theme="@style/bdp_SapiTheme"
             android:windowSoftInputMode="adjustPan" />
         <!-- ↑↑↑ passport ↑↑↑ -->
@@ -326,7 +326,7 @@
         <!-- ↑↑↑ 银联SDK ↑↑↑ -->
         
         <!-- ↓↓↓ 多酷SDK ↓↓↓ --> 
-         <activity
+        <activity
             android:name="com.duoku.platform.ui.DKContainerActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:launchMode="singleTop"
@@ -625,21 +625,29 @@
 
         <!-- 贴吧  receiver end -->
         <!-- ↑↑↑ 多酷SDK ↑↑↑ -->
+
         <meta-data
             android:name="appId"
-            android:value="appId:3067515" >
+            android:value="appId:5436585" >
         </meta-data>
         <meta-data
             android:name="appKey"
-            android:value="appKey:f3Os4GAOqxgm79GqbnkT9L8T" >
+            android:value="appKey:Ds8MfnhMKo3KBGjl6EkzLyp1" >
         </meta-data>
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
         </meta-data>
-         <meta-data
+        <meta-data
             android:name="ZD_APPID"
             android:value="ZD_APPID:150212661932" >
         </meta-data>
     </application>
+<supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    
 </manifest>
