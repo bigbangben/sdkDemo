@@ -88,24 +88,22 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_role);
-		findViewById(R.id.item_begin).setOnClickListener(this);
-		findViewById(R.id.item_create).setOnClickListener(this);
-		edRoleName = (EditText) findViewById(R.id.role_name);
+		setContentView(ResUtil.getLayout(this, "activity_role"));
+		findViewById(ResUtil.getId(this, "item_begin")).setOnClickListener(this);
+		findViewById(ResUtil.getId(this, "item_create")).setOnClickListener(this);
+		edRoleName = (EditText) findViewById(ResUtil.getId(this, "role_name"));
 	}
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.item_begin:
+		if (v.getId() == ResUtil.getId(this, "item_begin")) {
 			Intent intent = new Intent(SetRoleActivity.this, MainActivity.class);
 			Bundle bundle = new Bundle();
 			bundle.putString("RoleName", edRoleName.getText().toString().trim());
 			intent.putExtras(bundle);
 			SetRoleActivity.this.startActivity(intent);
 			finish();
-			break;
-		case R.id.item_create:
+		}else if (v.getId() == ResUtil.getId(this, "item_create")) {
 			mDialog = new LoadingDialog(this, "创建中……");
 			mDialog.show();
 			gameInfo = new GameInfo();
@@ -115,10 +113,6 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 			gameInfo.setZoneId("1111");
 			gameInfo.setZoneName("big");
 			ZDSDK.getInstance().createRole(this, gameInfo, callback);
-			break;
-
-		default:
-			break;
 		}
 	}
 	
@@ -143,7 +137,6 @@ public class SetRoleActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		ZDSDK.getInstance().onSdkDestory();
 	}
 
 }

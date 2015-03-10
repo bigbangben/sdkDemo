@@ -85,7 +85,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_welcome);
+		setContentView(ResUtil.getLayout(this, "activity_welcome"));
 		isLogout = getIntent().getBooleanExtra(LOGOUT, false);
 		// if (!isLogout) {
 		// ZhiDianManager.init(this,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE,mInitListener,
@@ -95,33 +95,18 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		mDialog = new LoadingDialog(this, "初始化中……");
 		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
-		Button button = (Button) findViewById(R.id.item_login);
-		Log.e("welcome", "++++++   activity_welcome = "+ R.layout.activity_welcome +"  +++++++");
-		Log.e("welcome", "++++++   item_login = "+ R.id.item_login +"  +++++++");
-		if (button != null) {
-			Log.e("welcome", "+++++++++++ button != null +++++++++++");
-			button.setOnClickListener(this);
-		}else {
-			Log.e("welcome", "+++++++++++ button == null +++++++++++");
-		}
+		findViewById(ResUtil.getId(this, "item_login")).setOnClickListener(this);
+	
 
 	}
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		switch (v.getId()) {
-		case R.id.item_login:
-			// ZhiDianManager.showLogin(this, iLoginListener);
-			//mDialog.setMessage("登录中……");
-			//mDialog.show();
+		if (v.getId() == ResUtil.getId(this, "item_login")) {
+			mDialog.setMessage("登录中……");
+			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
-			break;
-
-		default:
-			break;
 		}
-
 	}
 	
 	@Override
@@ -145,7 +130,6 @@ public class WelComeActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		ZDSDK.getInstance().onSdkDestory();
 	}
 
 }
