@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_bg" >
 
-    <LinearLayout
+ <!--    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/login_select" />
 
-       <!--  <Button
+        <Button
             android:id="@+id/item_define_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:background="@drawable/custom_select" /> -->
-    </LinearLayout>
+            android:background="@drawable/custom_select" />
+    </LinearLayout> -->
 
 </RelativeLayout>
