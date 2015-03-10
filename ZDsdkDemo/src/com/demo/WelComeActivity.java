@@ -49,6 +49,9 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			}
 			Toast.makeText(WelComeActivity.this, "initSuccess",
 					Toast.LENGTH_SHORT).show();
+			mDialog.setMessage("登录中……");
+			mDialog.show();
+			ZDSDK.getInstance().sdkLogin(WelComeActivity.this, callback);
 		}
 
 		@Override
@@ -96,18 +99,18 @@ public class WelComeActivity extends Activity implements OnClickListener {
 		mDialog = new LoadingDialog(this, "初始化中……");
 		mDialog.show();
 		ZDSDK.getInstance().sdkInit(this, callback);
-		findViewById(ResUtil.getId(this, "item_login")).setOnClickListener(this);
+		//findViewById(ResUtil.getId(this, "item_login")).setOnClickListener(this);
 	
 
 	}
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == ResUtil.getId(this, "item_login")) {
+	/*	if (v.getId() == ResUtil.getId(this, "item_login")) {
 			mDialog.setMessage("登录中……");
 			mDialog.show();
 			ZDSDK.getInstance().sdkLogin(this, callback);
-		}
+		}*/
 	}
 	
 	@Override
