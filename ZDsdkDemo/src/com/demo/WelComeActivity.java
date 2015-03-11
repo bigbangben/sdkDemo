@@ -52,8 +52,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 			if (mDialog.isShowing()) {
 				mDialog.cancel();
 			}
-			Toast.makeText(WelComeActivity.this, "initSuccess",
-					Toast.LENGTH_SHORT).show();
+			//Toast.makeText(WelComeActivity.this, "initSuccess",Toast.LENGTH_SHORT).show();
 			ZDSDK.getInstance().sdkLogin(WelComeActivity.this, callback);
 		}
 
