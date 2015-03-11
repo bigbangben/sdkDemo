@@ -393,6 +393,14 @@
             <intent-filter android:priority="800" />
         </service>
         <meta-data
+            android:name="appKey"
+            android:value="appKey:1378375366Az26xatNyDOD5EM6D2ys" >
+        </meta-data>
+        <meta-data
+            android:name="appSecret"
+            android:value="appSecret:ug2KMdLi2JSr4naOE48XmL3h" >
+        </meta-data>
+        <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
         </meta-data>
