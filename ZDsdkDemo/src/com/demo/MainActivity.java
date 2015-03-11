@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			Toast.makeText(MainActivity.this, "logoutSuccess",
 					Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(MainActivity.this, WelComeActivity.class);
-			intent.putExtra(WelComeActivity.LOGOUT, true);
+			//intent.putExtra(WelComeActivity.LOGOUT, true);
 			startActivity(intent);
 			finish();
 		}
@@ -74,7 +74,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void createRoleSuccess() {
-			Toast.makeText(MainActivity.this, "创建成功", Toast.LENGTH_SHORT).show();
 		}
 
 	};
