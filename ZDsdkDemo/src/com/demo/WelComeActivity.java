@@ -42,6 +42,7 @@ public class WelComeActivity extends Activity implements OnClickListener {
 
 		@Override
 		public void logoutSuccess() {
+			SDKLog.e(TAG, "XXXXXXXXXXXXXX logoutSuccess XXXXXXXXXXXXX");// FIXME
 			welcomePage.setVisibility(View.VISIBLE);
 			mainPage.setVisibility(View.GONE);
 			ZDSDK.getInstance().sdkInit(WelComeActivity.this, callback);
