@@ -28,15 +28,25 @@
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- 添加360SDK必需要的权限。 -->
+   <!-- 添加360SDK必需要的权限。 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.hardware.sensor.accelerometer" />
+
 
     <application
         android:name="com.application.AppApplication"
@@ -66,12 +76,12 @@
             android:screenOrientation="landscape" >
         </activity>
 
-        <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+         <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
         <activity
             android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
             android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
-            android:exported="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true" >
         </activity>
 
         <!-- 添加360SDK必需的activity：com.qihoopp.qcoinpay.QcoinActivity -->
@@ -82,38 +92,9 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
         </activity>
 
-        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
-        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
-        <meta-data
-            android:name="QHOPENSDK_APPID"
-            android:value="202309256" >
-        </meta-data>
-
-        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
-        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
-        <meta-data
-            android:name="QHOPENSDK_APPKEY"
-            android:value="4a40b253ac4bd1268324b64f1fa36b06" >
-        </meta-data>
-
-        <!-- 添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
-        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
-        <meta-data
-            android:name="QHOPENSDK_PRIVATEKEY"
-            android:value="49971a5901635684d52dd7068e9d4490" >
-        </meta-data>
-        <meta-data
-            android:name="screenOrientation"
-            android:value="screenOrientation:0" >
-        </meta-data>
-        <meta-data
-            android:name="ZD_APPID"
-            android:value="ZD_APPID:150212661932" >
-        </meta-data>
-
-        <!-- *   如下是需要加载的360推送配置项  * -->
+         <!-- *   如下是需要加载的360推送配置项  * -->
         <!-- 开机自启 -->
-        <receiver
+         <receiver
             android:name="com.qihoo.gamecenter.sdk.suspend.local.QBootReceiver"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
             <intent-filter>
@@ -129,6 +110,7 @@
                 <action android:name="com.qihoo.gamecenter.sdk.suspend.service.action.remote" />
             </intent-filter>
         </service>
+
         <service
             android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService"
             android:exported="false" >
@@ -165,9 +147,38 @@
         </service>
         <service
             android:name="com.qihoo.psdk.local.QLocalService"
-            android:exported="false"
+            android:exported="true"
             android:process=":QLocal" >
         </service>
+        
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPID"
+            android:value="202309256" >
+        </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPKEY。此处value为app_key。请在360应用开放平台http://open.app.360.cn/?from=open_dt注册申请app_key和app_secret -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_APPKEY"
+            android:value="4a40b253ac4bd1268324b64f1fa36b06" >
+        </meta-data>
+
+        <!-- 添加360SDK必需的meta-data：QHOPENSDK_PRIVATEKEY。此处value为private_key，其生成算法为md5(app_secret +”#”+ app_key)，全小写，详细算法请看开发文档附录。 -->
+        <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值 。读取失败会影响统计和结算，务必填写正确。 -->
+        <meta-data
+            android:name="QHOPENSDK_PRIVATEKEY"
+            android:value="49971a5901635684d52dd7068e9d4490" >
+        </meta-data>
+        <meta-data
+            android:name="screenOrientation"
+            android:value="screenOrientation:0" >
+        </meta-data>
+        <meta-data
+            android:name="ZD_APPID"
+            android:value="ZD_APPID:150212661932" >
+        </meta-data>
     </application>
 
     <supports-screens
