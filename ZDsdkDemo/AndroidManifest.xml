@@ -63,15 +63,15 @@
         </activity>
         <meta-data
             android:name="channelId"
-            android:value="channelId:14112403234" >
+            android:value="channelId:15031222247" >
         </meta-data>
         <meta-data
             android:name="merchantId"
-            android:value="merchantId:1411210225" >
+            android:value="merchantId:1503123252" >
         </meta-data>
         <meta-data
             android:name="appId"
-            android:value="appId:130502526490" >
+            android:value="appId:150312765591" >
         </meta-data>
         <meta-data
             android:name="appKey"
