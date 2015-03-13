@@ -57,6 +57,37 @@
                 android:screenOrientation="landscape" >
             </activity>
             
+        <!--  -->
+        <activity
+            android:name="com.coolcloud.uac.android.api.gameassist.GameAssistContentActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.coolcloud.uac.android.api.comm.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.coolcloud.uac.android.api.comm.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.coolcloud.uac.android.api.comm.OAuth2Activity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.coolcloud.uac.android.api.comm.AuthenticateActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+        <meta-data
+            android:name="appId"
+            android:value="appId:300079117" >
+        </meta-data>
+        <meta-data
+            android:name="appKey"
+            android:value="appKey:MIICWwIBAAKBgQCAiCNdTRXptkTjXqWUluvbgVqi9i3J5ekSqGP2X8p24bGAe4LbzNlQ06NJBFfDqB26jhmMQiZ6kfiBl7xTHXMF6x/1QKsBZPP+WGaIriO/jQaqcp7Cr6WwnE3YaEQ8uKBUFBXnds0SnVLdZ7qehpVYIDjDJ51lkvMgm/ZHXX+RowIDAQABAoGAKA7FvslMgAc/VwFjZ3jVzxZ0cf95a8gMqLT0Wo+mIQDb+igEM46XV/ptlE8XLzJQ+ZhZ2/2t0lt18KWimuC9vPRiTEyXLkDgI6xAUNmBeeBQKNex+Qs3zjGV/BIpVRcQeLYVwjn69BLatFiLiCbN2MM56Gz6gafFwldEZkctmfkCQQC4bDKQG45fVW06hTIqrRQro1+pUZvGWhwVjb1nPzOpejTZWrpXxNKtM2PM5VyX98lXun5d4H7GEDNU7hEInBnVAkEAsmrBg07Negbwt/Tm10Jv2SJNm7TLzT8t4iGPGfgY9ZxeCoiJTz84wjPQjDUxqMC7jXBStuAmmw9YQH4lqsiBlwJAd/4mE+9p/gtmK2pYjr3YXuBIsLEhirg8h6WWc6QCqCWUV0uZ7NtqPDkwmTMuwM3/Ge6Eo+4abiJCU+MmABUZFQJAFQDSRQXq1Hmqrs0qu557kkEih7jx4PiWCy/OK810Cr3cqDrIh0a3BM2auFauwOHnclANvK+Ie+qDhhwTjRZLgwJAfeuZEpzw3/TkHmSjEFuhqKaDeW4OVPFfyWTqVEiZKi2EgWQfMYJuXTe80KCz4YJHjY7mtNGtlT97XT8FLd0+kg==" >
+        </meta-data>
         <meta-data
             android:name="screenOrientation"
             android:value="screenOrientation:0" >
