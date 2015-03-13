@@ -28,25 +28,33 @@
     <!-- 往SDCard写入数据权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-   <!-- 添加360SDK必需要的权限。 -->
+        <!-- 添加360SDK必需要的权限。begin -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+    <!-- payment -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!-- 浮窗 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!-- 微信分享相关 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- 添加360SDK必需要的权限。end -->
 
     <application
         android:name="com.application.AppApplication"
@@ -76,14 +84,16 @@
             android:screenOrientation="landscape" >
         </activity>
 
-         <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
+    
+        <!-- 添加360SDK必需的activity：com.qihoopay.insdk.activity.ContainerActivity -->
         <activity
             android:name="com.qihoo.gamecenter.sdk.activity.ContainerActivity"
             android:configChanges="fontScale|orientation|keyboardHidden|locale|navigation|screenSize|uiMode"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:exported="true" >
+            android:exported="true">
         </activity>
 
+        <!-- payment activities begin -->
         <!-- 添加360SDK必需的activity：com.qihoopp.qcoinpay.QcoinActivity -->
         <activity
             android:name="com.qihoopp.qcoinpay.QcoinActivity"
@@ -92,32 +102,15 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" >
         </activity>
 
-         <!-- *   如下是需要加载的360推送配置项  * -->
-        <!-- 开机自启 -->
-         <receiver
-            android:name="com.qihoo.gamecenter.sdk.suspend.local.QBootReceiver"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- alipay sdk end -->
 
-        <service
-            android:name="com.qihoo.gamecenter.sdk.suspend.remote.QRemoteService"
-            android:exported="true"
-            android:process=":QSuspendRemote" >
-            <intent-filter>
-                <action android:name="com.qihoo.gamecenter.sdk.suspend.service.action.remote" />
-            </intent-filter>
-        </service>
 
-        <service
-            android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService"
-            android:exported="false" >
-            <intent-filter>
-                <action android:name="com.qihoo.gamecenter.sdk.suspend.local.QLocalService" />
-            </intent-filter>
-        </service>
+        <!-- payment activities end -->
 
         <!-- 如下是360游戏实时推送SDK必要声明，不可修改 -->
         <receiver
@@ -149,7 +142,11 @@
             android:name="com.qihoo.psdk.local.QLocalService"
             android:exported="true"
             android:process=":QLocal" >
+            <intent-filter>
+                <action android:name="com.qihoo.psdk.service.action.local" />
+            </intent-filter>
         </service>
+        <!-- 推送SDK end -->
         
         <!-- 添加360SDK必需的meta-data：QHOPENSDK_APPID。 -->
         <!-- 此处不要使用@string引用，上传APK时服务器要从这里读取值。读取失败会影响统计和结算，务必填写正确。 -->
